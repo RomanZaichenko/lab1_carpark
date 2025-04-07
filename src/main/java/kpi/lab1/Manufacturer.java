@@ -6,6 +6,7 @@ public class Manufacturer {
     private String name;
     private String country;
 
+    public Manufacturer() {} //потрібен для роботи json
 
     public Manufacturer(String name, String country) {
         if (name == null || name.isEmpty()) {

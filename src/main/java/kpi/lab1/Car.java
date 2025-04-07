@@ -1,5 +1,7 @@
 package kpi.lab1;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.Objects;
 
 public class Car {
@@ -9,6 +11,8 @@ public class Car {
     private double currentFuel;
     private int kilometrage;
     private double fuelConsumption;
+
+    public Car() {} //потрібен для роботи json
 
     public Car(String model, Manufacturer manufacturer, double fuelTankCapacity, double fuelConsumption, int kilometrage) {
         if (model == null || model.isEmpty()) {
@@ -25,6 +29,8 @@ public class Car {
 
         if (fuelTankCapacity < 0) {
             throw new IllegalArgumentException("Fuel Tank Capacity cannot be negative");
+        }else {
+            this.fuelTankCapacity = fuelTankCapacity;
         }
 
         this.currentFuel = fuelTankCapacity/2;
@@ -62,6 +68,7 @@ public class Car {
         currentFuel = fuelTankCapacity;
     }
 
+    @JsonIgnore
     public String getInfo() {
         return "Model: " + model + ", Manufacturer: " + manufacturer.getName() +
                 ", Fuel: " + currentFuel + "L/" + fuelTankCapacity + "L, kilometrage: " + kilometrage + " km";
