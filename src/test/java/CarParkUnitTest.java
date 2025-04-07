@@ -40,7 +40,7 @@ public class CarParkUnitTest {
 
     @Test
     public void testRemoveCar_NoCar() {
-        assertThrows(ArrayStoreException.class, () -> carPark.removeCar(car1));
+        assertThrows(IllegalArgumentException.class, () -> carPark.removeCar(car1));
     }
 
     @Test

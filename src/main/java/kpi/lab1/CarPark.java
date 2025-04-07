@@ -14,7 +14,7 @@ public class CarPark {
        if (cars.contains(car)) {
            cars.remove(car);
        } else {
-           throw new ArrayStoreException("Car does not exist");
+           throw new IllegalArgumentException("Car does not exist");
        }
     }
 
