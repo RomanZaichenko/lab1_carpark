@@ -1,0 +1,19 @@
+[ {
+  "model" : "S-Class",
+  "manufacturer" : {
+    "name" : "Mercedes",
+    "country" : "Germany"
+  },
+  "fuelTankCapacity" : 76.0,
+  "currentFuel" : 38.0,
+  "kilometrage" : 0
+}, {
+  "model" : "M8",
+  "manufacturer" : {
+    "name" : "BMW",
+    "country" : "Germany"
+  },
+  "fuelTankCapacity" : 65.0,
+  "currentFuel" : 32.5,
+  "kilometrage" : 111
+} ]
