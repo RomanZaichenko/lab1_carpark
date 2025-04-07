@@ -23,13 +23,20 @@ public class Car {
             this.manufacturer = manufacturer;
         }
 
-        this.fuelTankCapacity = fuelTankCapacity;
-        this.currentFuel = fuelTankCapacity;
+        if (fuelTankCapacity < 0) {
+            throw new IllegalArgumentException("Fuel Tank Capacity cannot be negative");
+        }
+
+        this.currentFuel = fuelTankCapacity/2;
         this.kilometrage = kilometrage;
         this.fuelConsumption = fuelConsumption;
     }
 
     public void drive(int kilometers) {
+        if (kilometers <= 0) {
+            throw new IllegalArgumentException("Kilometers must be greater than 0");
+        }
+
         int kilometersGone = 0;
         while(kilometersGone < kilometers) {
             if (fuelConsumption <= currentFuel) {
@@ -37,7 +44,7 @@ public class Car {
                 this.kilometrage++;
                 currentFuel -= fuelConsumption;
             } else {
-                throw new IllegalArgumentException("Fuel Consumption exceeded");
+                throw new IllegalArgumentException("Fuel exceeded");
             }
         }
     }
@@ -64,7 +71,7 @@ public class Car {
     public Manufacturer getManufacturer() { return manufacturer; }
     public double getFuelTankCapacity() { return fuelTankCapacity; }
     public double getCurrentFuel() { return currentFuel; }
-    public int getkilometrage() { return kilometrage; }
+    public int getKilometrage() { return kilometrage; }
 
 
     @Override

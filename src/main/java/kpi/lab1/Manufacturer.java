@@ -8,8 +8,17 @@ public class Manufacturer {
 
 
     public Manufacturer(String name, String country) {
-        this.name = name;
-        this.country = country;
+        if (name == null || name.isEmpty()) {
+            throw new IllegalArgumentException("Name cannot be null or empty");
+        } else {
+            this.name = name;
+        }
+
+        if (country == null || country.isEmpty()) {
+            throw new IllegalArgumentException("Country cannot be null or empty");
+        } else {
+            this.country = country;
+        }
 
     }
 

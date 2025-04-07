@@ -11,7 +11,11 @@ public class CarPark {
     }
 
     public void removeCar(Car car) {
-        cars.remove(car);
+       if (cars.contains(car)) {
+           cars.remove(car);
+       } else {
+           throw new ArrayStoreException("Car does not exist");
+       }
     }
 
     public List<Car> getAllCars() {
